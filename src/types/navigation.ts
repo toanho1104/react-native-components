@@ -2,16 +2,29 @@ import type {BottomTabNavigationProp} from '@react-navigation/bottom-tabs';
 import type {CompositeNavigationProp} from '@react-navigation/native';
 import type {StackNavigationProp} from '@react-navigation/stack';
 
-export type StackParamList = {
-  Screen1: undefined;
-  Screen2: undefined;
+export type HomeParamList = {
+  Home1: undefined;
+  Home2: undefined;
 };
-export type BottomParamList = {
-  Btab1: undefined;
-  Btab2: undefined;
+export type RootBottomParamList = {
+  Home: HomeParamList;
+  User: undefined;
+};
+
+export type MainStackParamList = {
+  BottomTab: RootBottomParamList;
+  Stack1: undefined;
+};
+export type AuthStackParamList = {
+  Login: undefined;
+};
+
+export type RootStackParamList = {
+  MainStack: MainStackParamList;
+  AuthStack: AuthStackParamList;
 };
 
 export type RootNavigationProp = CompositeNavigationProp<
-  BottomTabNavigationProp<BottomParamList>,
-  StackNavigationProp<StackParamList>
+  BottomTabNavigationProp<RootBottomParamList>,
+  StackNavigationProp<RootStackParamList>
 >;

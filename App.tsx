@@ -1,24 +1,13 @@
 import React from 'react';
 
-import {NavigationContainer} from '@react-navigation/native';
-import {MainTask} from 'src/navigation/mainStack';
-
-import {navigationRef} from '@navigation';
+import {RootStack} from 'src/navigation/RootStack';
 
 interface Props {}
-
-const RootApp = () => {
-  return (
-    <NavigationContainer ref={navigationRef}>
-      <MainTask />
-    </NavigationContainer>
-  );
-};
 
 const App = ({}: Props) => {
   return (
     <>
-      <RootApp />
+      <RootStack />
     </>
   );
 };
