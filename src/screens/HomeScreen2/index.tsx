@@ -1,16 +1,16 @@
 import React from 'react';
 
-import {Text, View} from 'react-native';
+import {Text, TouchableOpacity} from 'react-native';
 
 import {BackGround} from '@components';
 
 interface Props {}
-export const StackScreen1 = ({}: Props) => {
+export const HomeScreen2 = ({}: Props) => {
   return (
     <BackGround>
-      <View>
-        <Text>StackScreen1</Text>
-      </View>
+      <TouchableOpacity>
+        <Text>Home Screen 2</Text>
+      </TouchableOpacity>
     </BackGround>
   );
 };

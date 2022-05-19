@@ -7,7 +7,7 @@ export type HomeParamList = {
   Home2: undefined;
 };
 export type RootBottomParamList = {
-  Home: HomeParamList;
+  Home: StackNavigationProp<HomeParamList>;
   User: undefined;
 };
 

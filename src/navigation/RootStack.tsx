@@ -1,19 +1,19 @@
 import React from 'react';
 
 import {NavigationContainer} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {createStackNavigator} from '@react-navigation/stack';
 
-import {navigationRef} from '@navigation';
+import {navigationOptions, navigationRef} from '@navigation';
 import {RootStackParamList} from '@types';
 
 import {MainStack} from './MainStack';
 
 interface Props {}
-const Stack = createNativeStackNavigator<RootStackParamList>();
+const Stack = createStackNavigator<RootStackParamList>();
 export const RootStack = ({}: Props) => {
   return (
     <NavigationContainer ref={navigationRef}>
-      <Stack.Navigator>
+      <Stack.Navigator screenOptions={{...navigationOptions}}>
         <Stack.Screen
           name="MainStack"
           component={MainStack}

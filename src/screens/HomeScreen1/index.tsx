@@ -1,13 +1,25 @@
 import React from 'react';
 
-import {Text, View} from 'react-native';
+import {Text, TouchableOpacity} from 'react-native';
+
+import {useNavigation} from '@react-navigation/native';
+
+import {BackGround} from '@components';
+
+import {RootNavigationProp} from '@types';
 
 interface Props {}
 export const HomeScreen1 = ({}: Props) => {
+  const {navigate} = useNavigation<RootNavigationProp>();
   return (
-    <View>
-      <Text>Home Screen 1</Text>
-    </View>
+    <BackGround>
+      <TouchableOpacity
+        onPress={() => {
+          navigate('Stack1');
+        }}>
+        <Text>Home Screen 1</Text>
+      </TouchableOpacity>
+    </BackGround>
   );
 };
 

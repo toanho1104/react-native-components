@@ -1,6 +1,10 @@
 import {createRef} from 'react';
 
 import {StackActions} from '@react-navigation/native';
+import {
+  CardStyleInterpolators,
+  StackNavigationOptions,
+} from '@react-navigation/stack';
 
 export enum STACK_NAMES {
   AUTHENTICATION_STACK = 'AUTHENTICATION_STACK',
@@ -31,3 +35,10 @@ export const navigateReset = (stackName: string, params?: any) => {
 export function navigateToScreenAndReplace(name: string, params: any) {
   navigationRef.current?.dispatch(StackActions.replace(name, params));
 }
+
+export const navigationOptions: StackNavigationOptions = {
+  // gestureEnabled: true,
+  gestureDirection: 'horizontal',
+  cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
+  headerShown: false,
+};
