@@ -1,6 +1,6 @@
-import React, {useState, useEffect, Children} from 'react';
+import React from 'react';
 
-import {View, SafeAreaView, Text, StyleSheet, Alert, Image} from 'react-native';
+import {StyleSheet, Text, View} from 'react-native';
 
 import {COLORS} from '@styles';
 
@@ -18,6 +18,6 @@ export const BackGround = ({children}: Props) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: COLORS.DARK.BACKGROUND_PRIMARY,
+    backgroundColor: COLORS.LIGHT.BACKGROUND_PRIMARY,
   },
 });
