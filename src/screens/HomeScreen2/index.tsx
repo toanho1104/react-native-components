@@ -8,7 +8,16 @@ interface Props {}
 export const HomeScreen2 = ({}: Props) => {
   return (
     <BackGround>
-      <TouchableOpacity>
+      <TouchableOpacity
+        onPress={() => {
+          console.log(
+            '========================================================',
+          );
+          console.log('aaaaaa');
+          console.log(
+            '========================================================',
+          );
+        }}>
         <Text>Home Screen 2</Text>
       </TouchableOpacity>
     </BackGround>

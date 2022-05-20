@@ -11,12 +11,17 @@ const persistConfig = {
   storage: AsyncStorage,
   whitelist: ['storage'],
 };
+let middleware = [];
+if (__DEV__) {
+  const createDebugger = require('redux-flipper').default;
+  middleware.push(createDebugger());
+}
 const sagaMiddleware = createSagaMiddleware();
 const composeEnhancers = compose;
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 const store = createStore(
   persistedReducer,
-  composeEnhancers(applyMiddleware(sagaMiddleware)),
+  composeEnhancers(applyMiddleware(sagaMiddleware, ...middleware)),
 );
 sagaMiddleware.run(rootSaga);
 // persistStore(store).purge()
